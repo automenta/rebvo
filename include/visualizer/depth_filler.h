@@ -138,12 +138,12 @@ public:
     TooN::Vector <3> getImg3DPos(float x,float y,cam_model &cam){
 
         float x_histo=x/(float)bl_size.w-0.5;   //Points in grid are shifted 0.5*bl_size due to discretization effect
-        int xf=std::min(std::max(floor(x_histo),0.0),size.w-1.0);
-        int xc=std::min(std::max(ceil(x_histo),0.0),size.w-1.0);
+        int xf=std::min(std::max(floor(x_histo),((float)0.0)),size.w-float(1.0));
+        int xc=std::min(std::max(ceil(x_histo),float(0.0)),size.w-float(1.0));
 
         float y_histo=y/(float)bl_size.h-0.5;
-        int yf=std::min(std::max(floor(y_histo),0.0),size.h-1.0);
-        int yc=std::min(std::max(ceil(y_histo),0.0),size.h-1.0);
+        int yf=std::min(std::max(floor(y_histo),float(0.0)),size.h-float(1.0));
+        int yc=std::min(std::max(ceil(y_histo),float(0.0)),size.h-float(1.0));
 
         float dx=x_histo-xf;
         float dy=y_histo-yf;
@@ -166,12 +166,12 @@ public:
     TooN::Vector <3> getImg3DPosTriInterp(float x,float y,cam_model &cam){
 
         float x_histo=x/(float)bl_size.w-0.5;   //Points in grid are shifted 0.5*bl_size due to discretization effect
-        int xf=std::min(std::max(floor(x_histo),0.0),size.w-1.0);
-        int xc=std::min(std::max(ceil(x_histo),0.0),size.w-1.0);
+        int xf=std::min(std::max(floor(x_histo),float(0.0)),size.w-float(1.0));
+        int xc=std::min(std::max(ceil(x_histo),float(0.0)),size.w-float(1.0));
 
         float y_histo=y/(float)bl_size.h-0.5;
-        int yf=std::min(std::max(floor(y_histo),0.0),size.h-1.0);
-        int yc=std::min(std::max(ceil(y_histo),0.0),size.h-1.0);
+        int yf=std::min(std::max(floor(y_histo),float(0.0)),size.h-float(1.0));
+        int yc=std::min(std::max(ceil(y_histo),float(0.0)),size.h-float(1.0));
 
         float dx=x_histo-xf;
         float dy=y_histo-yf;
@@ -203,12 +203,12 @@ public:
     double getImgRhoTriInterp(float x,float y,double *s_rho=nullptr){
 
         float x_histo=x/(float)bl_size.w-0.5;
-        int xf=std::min(std::max(floor(x_histo),0.0),size.w-1.0);
-        int xc=std::min(std::max(ceil(x_histo),0.0),size.w-1.0);
+        int xf=std::min(std::max(floor(x_histo),float(0.0)),size.w-float(1.0));
+        int xc=std::min(std::max(ceil(x_histo),float(0.0)),size.w-float(1.0));
 
         float y_histo=y/(float)bl_size.h-0.5;
-        int yf=std::min(std::max(floor(y_histo),0.0),size.h-1.0);
-        int yc=std::min(std::max(ceil(y_histo),0.0),size.h-1.0);
+        int yf=std::min(std::max(floor(y_histo),float(0.0)),size.h-float(1.0));
+        int yc=std::min(std::max(ceil(y_histo),float(0.0)),size.h-float(1.0));
 
         float dx=x_histo-xf;
         float dy=y_histo-yf;
@@ -246,12 +246,12 @@ public:
     double getImgRho(float x,float y,double *s_rho=nullptr,bool *fixed=nullptr){
 
         float x_histo=x/(float)bl_size.w-0.5;
-        int xf=std::min(std::max(floor(x_histo),0.0),size.w-1.0);
-        int xc=std::min(std::max(ceil(x_histo),0.0),size.w-1.0);
+        int xf=std::min(std::max(floor(x_histo),float(0.0)),size.w-float(1.0));
+        int xc=std::min(std::max(ceil(x_histo),float(0.0)),size.w-float(1.0));
 
         float y_histo=y/(float)bl_size.h-0.5;
-        int yf=std::min(std::max(floor(y_histo),0.0),size.h-1.0);
-        int yc=std::min(std::max(ceil(y_histo),0.0),size.h-1.0);
+        int yf=std::min(std::max(floor(y_histo),float(0.0)),size.h-float(1.0));
+        int yc=std::min(std::max(ceil(y_histo),float(0.0)),size.h-float(1.0));
 
         float dx=x_histo-xf;
         float dy=y_histo-yf;
@@ -282,12 +282,12 @@ public:
     double interplShiftRhoScaled(float x,float y,double scale,double mult){
 
         float x_histo=x/(float)bl_size.w-0.5;
-        int xf=std::min(std::max(floor(x_histo),0.0),size.w-1.0);
-        int xc=std::min(std::max(ceil(x_histo),0.0),size.w-1.0);
+        int xf=std::min(std::max(floor(x_histo),float(0.0)),size.w-float(1.0));
+        int xc=std::min(std::max(ceil(x_histo),float(0.0)),size.w-float(1.0));
 
         float y_histo=y/(float)bl_size.h-0.5;
-        int yf=std::min(std::max(floor(y_histo),0.0),size.h-1.0);
-        int yc=std::min(std::max(ceil(y_histo),0.0),size.h-1.0);
+        int yf=std::min(std::max(floor(y_histo),float(0.0)),size.h-float(1.0));
+        int yc=std::min(std::max(ceil(y_histo),float(0.0)),size.h-float(1.0));
 
         float dx=x_histo-xf;
         float dy=y_histo-yf;
@@ -314,12 +314,12 @@ public:
     bool IsImgVisible(float x,float y,bool use_and=true){
 
         float x_histo=x/bl_size.w-0.5;
-        int xf=std::min(std::max(floor(x_histo),0.0),size.w-1.0);
-        int xc=std::min(std::max(ceil(x_histo),0.0),size.w-1.0);
+        int xf=std::min(std::max(floor(x_histo),float(0.0)),size.w-float(1.0));
+        int xc=std::min(std::max(ceil(x_histo),float(0.0)),size.w-float(1.0));
 
         float y_histo=y/bl_size.h-0.5;
-        int yf=std::min(std::max(floor(y_histo),0.0),size.h-1.0);
-        int yc=std::min(std::max(ceil(y_histo),0.0),size.h-1.0);
+        int yf=std::min(std::max(floor(y_histo),float(0.0)),size.h-float(1.0));
+        int yc=std::min(std::max(ceil(y_histo),float(0.0)),size.h-float(1.0));
 
 
         if(use_and)
@@ -340,12 +340,12 @@ public:
     double GetImgDist(float x,float y){
 
         float x_histo=x/bl_size.w-0.5;
-        int xf=std::min(std::max(floor(x_histo),0.0),size.w-1.0);
-        int xc=std::min(std::max(ceil(x_histo),0.0),size.w-1.0);
+        int xf=std::min(std::max(floor(x_histo),float(0.0)),size.w-float(1.0));
+        int xc=std::min(std::max(ceil(x_histo),float(0.0)),size.w-float(1.0));
 
         float y_histo=y/bl_size.h-0.5;
-        int yf=std::min(std::max(floor(y_histo),0.0),size.h-1.0);
-        int yc=std::min(std::max(ceil(y_histo),0.0),size.h-1.0);
+        int yf=std::min(std::max(floor(y_histo),float(0.0)),size.h-float(1.0));
+        int yc=std::min(std::max(ceil(y_histo),float(0.0)),size.h-float(1.0));
 
         float dx=x_histo-xf;
         float dy=y_histo-yf;

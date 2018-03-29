@@ -28,7 +28,7 @@
 
 
 
-namespace  rebvo{
+//namespace  rebvo{
 
 #ifdef __cplusplus
 extern "C" {
@@ -63,8 +63,8 @@ class VideoDecoder
 public:
     VideoDecoder(AVCodecID codec_id, int w, int h);
     ~VideoDecoder();
-    bool DecodeFrame(u_char *coded_data,int cd_size,RGB24Pixel *data);
+    bool DecodeFrame(u_char *coded_data,int cd_size,rebvo::RGB24Pixel *data);
 };
 
-}
+//}
 #endif // VIDEODECODER_H

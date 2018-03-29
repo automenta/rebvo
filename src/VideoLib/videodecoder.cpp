@@ -24,7 +24,7 @@
  
  #include "VideoLib/videodecoder.h"
 
-namespace  rebvo{
+//namespace  rebvo{
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(55,28,1)
 #define av_frame_alloc  avcodec_alloc_frame
 #endif
@@ -99,7 +99,7 @@ inline float clamp(float s){
 
 }
 
-bool VideoDecoder::DecodeFrame(u_char *coded_data,int cd_size,RGB24Pixel *data)
+bool VideoDecoder::DecodeFrame(u_char *coded_data,int cd_size,rebvo::RGB24Pixel *data)
 {
 
     int got_picture,len;
@@ -135,6 +135,6 @@ bool VideoDecoder::DecodeFrame(u_char *coded_data,int cd_size,RGB24Pixel *data)
     }
 
     return false;
-}
+//}
 
 }

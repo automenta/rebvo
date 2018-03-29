@@ -34,3 +34,6 @@
 *.gcda
 *.rpo
 /Release/
+TooN-2.2/
+.qmake.stash
+
